@@ -8,13 +8,24 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        lit: "#83f52c"
       },
+      spacing: {
+        segmentWidth: "3.125rem",
+        segmentHeight: ".625rem",
+      }
     },
   },
   plugins: [],
+  safelist: [
+    {
+      pattern: /top-+/
+    },
+    {
+      pattern: /left-+/
+    },
+    { pattern: /rotate-+/ }
+  ]
 };
 export default config;
