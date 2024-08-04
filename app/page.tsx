@@ -1,15 +1,11 @@
-import Display from "@/components/Segment";
-
-import Image from "next/image";
+import Display, { SixteenSegmentText } from "@/components/Segment";
 
 export default function Home() {
-  const statement = "wxyz";
-  const displayMap = statement.split("").map((char) => char.toUpperCase());
+  const statement = "Hello Elisabeth";
+
   return (
-    <main className="flex min-h-screen items-center justify-between p-24">
-      {displayMap.map((char) => {
-        return <Display input={char} key={char} />;
-      })}
+    <main className="flex min-h-screen items-center justify-center p-24 flex-wrap text-xs">
+      <SixteenSegmentText text={statement} />
     </main>
   );
 }

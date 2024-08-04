@@ -41,6 +41,7 @@ export default function Display({ input }: { input: string | number }) {
   }
 
   const map: { [key: string | number]: number } = {
+    // integers
     0: 0xff,
     1: 0xc,
     2: 0x377,
@@ -51,6 +52,8 @@ export default function Display({ input }: { input: string | number }) {
     7: 0xf,
     8: 0x3ff,
     9: 0x3bf,
+
+    // uppercase letters
     A: 0x3cf,
     B: 0x4a3f,
     C: 0xf3,
@@ -78,11 +81,40 @@ export default function Display({ input }: { input: string | number }) {
     Y: 0x4384,
     Z: 0x3033,
 
+    // lowercase letters
+    a: 0x37f,
+    b: 0x3f8,
+    c: 0x370,
+    d: 0x37c,
+    e: 0x3f7,
+    f: 0x4b02,
+    g: 0x3bf,
+    h: 0x3c8,
+    i: 0x4131,
+    j: 0x3b,
+    k: 0x83c0,
+    l: 0x4811,
+    m: 0x4348,
+    n: 0xcf,
+    o: 0x378,
+    p: 0x11c3,
+    q: 0x118f,
+    r: 0x340,
+    s: 0x8230,
+    t: 0x4b10,
+    u: 0x78,
+    v: 0x2040,
+    w: 0xa048,
+    x: 0xa300,
+    y: 0xa3c,
+    z: 0x2120,
+
+    // special characters
     " ": 0,
   };
 
   return (
-    <div className="relative">
+    <div className="relative w-32 h-40 flex items-center justify-center m-4">
       {segments.map((segment) => {
         // bitwise operation to get the segment from the input number
         const output = !map[input] ? false : !!((map[input] >> segment) & 1);
@@ -148,3 +180,10 @@ export default function Display({ input }: { input: string | number }) {
     </div>
   );
 }
+
+export const SixteenSegmentText = ({ text }: { text: string }) => {
+  const displayMap = text.split("");
+  return displayMap.map((char) => {
+    return <Display input={char} key={char} />;
+  });
+};
