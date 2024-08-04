@@ -3,7 +3,7 @@ import Display from "@/components/Segment";
 import Image from "next/image";
 
 export default function Home() {
-  const statement = "f you lis";
+  const statement = "wxyz";
   const displayMap = statement.split("").map((char) => char.toUpperCase());
   return (
     <main className="flex min-h-screen items-center justify-between p-24">

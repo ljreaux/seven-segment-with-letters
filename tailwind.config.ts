@@ -9,11 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        lit: "#83f52c"
+        lit: "#83f52c",
+        unlit: "#1A1A1A"
       },
       spacing: {
         segmentWidth: "3.125rem",
         segmentHeight: ".625rem",
+        halfSegment: "1.5625rem"
+      },
+      rotate: {
+        "30": "60deg"
       }
     },
   },
